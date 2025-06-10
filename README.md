@@ -110,4 +110,16 @@ Frontend assumes fixed backend base URL in utils/api.js.
 
 You can watch my 5-minute walkthrough video in demo.mp4
 
+### NOTES / ADDITION
+The link below is the live deployment of my dental scheduling project, hosted on an AWS S3 static website:
+
+At the moment, only the Homepage, Login, and Register pages are accessible. Due to time, the connection between the frontend and backend has not been fully completed.
+- Frontend deployed to AWS S3 as a static site.
+- Backend containerized using Docker, and deployed to a Kubernetes cluster on AWS EKS.
+- Used Amazon ECR for storing the backend Docker image.
+- Database hosted on AWS RDS (PostgreSQL).
+- Created Kubernetes secrets for pulling private images.Began setting up service exposure, but the backend is not yet reachable from the frontend due to   incomplete Ingress or Load Balancer configuration.
+
+http://dental-frontend-bucket.s3-website-ap-southeast-1.amazonaws.com  
+
 ## Thank you!
