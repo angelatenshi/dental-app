@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dental-backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: dental-backend
+  template:
+    metadata:
+      labels:
+        app: dental-backend
+    spec:
+      containers:
+        - name: dental-backend
+          image: 234401908961.dkr.ecr.ap-southeast-1.amazonaws.com/dental-backend:latest
+          ports:
+            - containerPort: 5000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dental-backend-service
+spec:
+  selector:
+    app: dental-backend
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5000
+  type: LoadBalancer
