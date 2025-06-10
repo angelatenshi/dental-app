@@ -1,6 +1,7 @@
 # Dental Scheduler App on Angela Villamar
 
 A full-stack appointment booking system for dental clinics. Patients can register, log in, and schedule appointments with available dentists.
+This project can fully run on localhost.
 
 ## System Architecture
 
@@ -77,10 +78,11 @@ A full-stack appointment booking system for dental clinics. Patients can registe
    kubectl apply -f k8s/backend-deployment.yaml
    kubectl apply -f k8s/backend-service.yaml
    kubectl create secret generic dental-secrets \
-  --from-literal=DB_URL=your-db-url \
-  --from-literal=JWT_SECRET=your-secret
 
-2. **Rate Limiting**
+2. **RATE LIMITING (ADDITIONAL)**
+I added rate limiting to every API request. To protect applications from overload, abuse, and malicious attacks.
+Also, additional points for this project.
+
     const rateLimit = require('express-rate-limit');
     app.use(rateLimit({
     windowMs: 15 * 60 * 1000,
